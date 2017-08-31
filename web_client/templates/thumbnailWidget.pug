@@ -1,0 +1,11 @@
+ul.dsa-item-grid
+  each item in items
+    if item.has('largeImage')
+      li.dsa-item-grid-entry(public=(isParentPublic ? 'true' : 'false'))
+        a.dsa-item-grid-link(g-item-cid=item.cid)
+          img(src=`${apiRoot}/item/${item.id}/tiles/thumbnail?width=128&height=128`)
+  if (hasMore)
+    li.g-show-more
+      a.g-show-more-items
+        i.icon-level-down
+        | Show more items...
